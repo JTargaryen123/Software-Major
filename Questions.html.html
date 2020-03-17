@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+</head>
+<body>
+<h1>Questions</h1><br>
+<p id="easy"></p>
+<p id="medium"></p>
+<p id="hard"></p>
+<p id="easya"></p>
+<p id="mediuma"></p>
+<p id="harda"></p>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var easyq = [];
+    var easya = [];
+    var medq = [];
+    var meda = [];
+    var hardq = [];
+    var harda = [];
+    $(function(){
+        var sheetUrl = "https://spreadsheets.google.com/feeds/cells/11D_caXqEm6nZus9VUTCt64NVVO9YH2ikFXbCk7BnAd8/1/public/full?alt=json";
+        $.getJSON(sheetUrl, function(data){
+            var entry = data.feed.entry;
+            var i;
+            var j;
+            var length = entry.length - 1;
+            for (i=0; i <= length; i++) {
+                if (i == 0) {
+                    for (j=i; j <= length; j+=6) {
+                        easyq.push(entry[j].content.$t)
+                    }
+                }
+                else if (i == 1) {
+                    for (j=i; j <= length; j+=6) {
+                        easya.push(entry[j].content.$t)
+                    }
+                }
+                else if (i == 2) {
+                    for (j=i; j <= length; j+=6) {
+                        medq.push(entry[j].content.$t)
+                    }
+                }
+                else if (i == 3) {
+                    for (j=i; j <= length; j+=6) {
+                        meda.push(entry[j].content.$t)
+                    }
+                }
+                else if (i == 4) {
+                    for (j=i; j <= length; j+=6) {
+                        hardq.push(entry[j].content.$t)
+                    }
+                }
+                else if (i == 5) {
+                    for (j=i; j <= length; j+=6) {
+                        harda.push(entry[j].content.$t)
+                    }
+                }
+
+            }
+            console.log(easyq);
+            console.log(easya);
+            console.log(medq);
+            console.log(meda);
+            console.log(hardq);
+            console.log(harda);
+
+
+
+        });
+
+    })
+</script>
+<button onclick="myFunction()">Easy</button>
+<button onclick="myFunction3()">Medium</button>
+<button onclick="myFunction5()">Hard</button>
+<button onclick="myFunction2()">Easy Answers</button>
+<button onclick="myFunction4()">Medium Answers</button>
+<button onclick="myFunction6()">Hard Answers</button>
+
+<script>
+    function myFunction() {
+        document.getElementById("easy").innerHTML = easyq
+    }
+</script>
+<script>
+    function myFunction2() {
+        document.getElementById("easya").innerHTML = easya
+    }
+</script>
+
+<script>
+    function myFunction3() {
+        document.getElementById("medium").innerHTML = medq
+    }
+</script>
+<script>
+    function myFunction4() {
+        document.getElementById("mediuma").innerHTML = meda
+    }
+</script>
+<script>
+    function myFunction5() {
+        document.getElementById("hard").innerHTML = hardq
+    }
+</script>
+<script>
+    function myFunction6() {
+        document.getElementById("harda").innerHTML = harda
+    }
+</script>
+</html>
