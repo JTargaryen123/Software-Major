@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGINHERE</title>
+</head>
+<body>
+<h1>LOGIN</h1>
+<form id="form">
+    <input type="text" placeholder="username" id="uname"><br><br>
+    <input id="pass" type="text" placeholder="password"><br><br>
+    <button type="button" onclick="getInputValue()">Submit</button>
+</form>
+
+<p id="1"></p>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var usernames = [];
+    var passwords = [];
+    $(function() {
+        var sheetUrl = "https://spreadsheets.google.com/feeds/cells/1CvClM7o9QPbcLzgtfFbYMUVjwY-HfxxgaKlqhyk-1Mw/1/public/full?alt=json"
+        $.getJSON(sheetUrl, function(data){
+            var entry = data.feed.entry;
+            var i;
+            var j;
+            var length = entry.length - 1;
+            for (i=0; i <= length; i++){
+                if (i == 0){
+                    for (j=i; j<= length; j+=2) {
+                        usernames.push(entry[j].content.$t)
+                    }
+                }
+                else if (i == 1){
+                    for (j=1; j <= length; j+=2){
+                        passwords.push(entry[j].content.$t)
+                    }
+                }
+            }
+        })
+            });
+    console.log(usernames);
+    console.log(passwords);
+
+</script>
+<script>
+    function getInputValue(){
+        var username = document.getElementById("uname").value;
+        var password = document.getElementById("pass").value;
+        alert(username);
+        alert(password);
+        var i;
+        for (i=0; i <= length; i++){
+            if (username = usernames[i]){
+                if (password = passwords[i]){
+                    alert("correct password");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
