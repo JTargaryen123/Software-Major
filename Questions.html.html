@@ -75,42 +75,67 @@
 
     })
 </script>
-<button onclick="myFunction()">Easy</button>
-<button onclick="myFunction3()">Medium</button>
-<button onclick="myFunction5()">Hard</button>
-<button onclick="myFunction2()">Easy Answers</button>
-<button onclick="myFunction4()">Medium Answers</button>
-<button onclick="myFunction6()">Hard Answers</button>
+<button id="easyq1" onclick="myFunction()">Easy</button>
+<button id="medq1" onclick="myFunction3()">Medium</button>
+<button id="hardq1" onclick="myFunction5()">Hard</button>
+<button id="easya1" onclick="myFunction2()">Easy Answers</button>
+<button id="meda1" onclick="myFunction4()">Medium Answers</button>
+<button id="harda1" onclick="myFunction6()">Hard Answers</button>
 
 <script>
     function myFunction() {
-        document.getElementById("easy").innerHTML = easyq
+        document.getElementById("easy").innerHTML = easyq;
+        document.getElementById("medq1").style.display = "none";
+        document.getElementById("hardq1").style.display = "none";
+        document.getElementById("meda1").style.display = "none";
+        document.getElementById("harda1").style.display = "none";
     }
 </script>
 <script>
     function myFunction2() {
-        document.getElementById("easya").innerHTML = easya
+        document.getElementById("easya").innerHTML = easya;
+        document.getElementById("meda1").style.display = "none";
+        document.getElementById("harda1").style.display = "none";
+        document.getElementById("medq1").style.display = "none";
+        document.getElementById("hardq1").style.display = "none";
+
     }
 </script>
 
 <script>
     function myFunction3() {
-        document.getElementById("medium").innerHTML = medq
+        document.getElementById("medium").innerHTML = medq;
+        document.getElementById("easyq1").style.display = "none";
+        document.getElementById("hardq1").style.display = "none";
+        document.getElementById("easya1").style.display = "none";
+        document.getElementById("harda1").style.display = "none";
     }
 </script>
 <script>
     function myFunction4() {
-        document.getElementById("mediuma").innerHTML = meda
+        document.getElementById("mediuma").innerHTML = meda;
+        document.getElementById("easya1").style.display = "none";
+        document.getElementById("harda1").style.display = "none";
+        document.getElementById("easyq1").style.display = "none";
+        document.getElementById("hardq1").style.display = "none";
     }
 </script>
 <script>
     function myFunction5() {
-        document.getElementById("hard").innerHTML = hardq
+        document.getElementById("hard").innerHTML = hardq;
+        document.getElementById("easyq1").style.display = "none";
+        document.getElementById("medq1").style.display = "none";
+        document.getElementById("easya1").style.display = "none";
+        document.getElementById("meda1").style.display = "none";
     }
 </script>
 <script>
     function myFunction6() {
-        document.getElementById("harda").innerHTML = harda
+        document.getElementById("harda").innerHTML = harda;
+        document.getElementById("easya1").style.display = "none";
+        document.getElementById("meda1").style.display = "none";
+        document.getElementById("easyq1").style.display = "none";
+        document.getElementById("medq1").style.display = "none";
     }
 </script>
 </html>
