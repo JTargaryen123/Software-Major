@@ -23,12 +23,14 @@
     var hardq = [];
     var harda = [];
     $(function(){
-        var sheetUrl = "https://spreadsheets.google.com/feeds/cells/11D_caXqEm6nZus9VUTCt64NVVO9YH2ikFXbCk7BnAd8/1/public/full?alt=json";
+        var sheetUrl = "https://spreadsheets.google.com/feeds/cells/1wLs17reKErAQ7TNZIQceKrPNW7NllDkKmlfCY5y6qp4/1/public/full?alt=json";
         $.getJSON(sheetUrl, function(data){
             var entry = data.feed.entry;
+            console.log(entry);
             var i;
             var j;
             var length = entry.length - 1;
+            console.log(length);
             for (i=0; i <= length; i++) {
                 if (i == 0) {
                     for (j=i; j <= length; j+=6) {
