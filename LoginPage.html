@@ -48,14 +48,12 @@
     function getInputValue(){
         var username = document.getElementById("uname").value;
         var password = document.getElementById("pass").value;
-        alert(username);
-        alert(password);
         var i;
         var length = usernames.length;
         for (i=0; i <= length; i++){
             if (username == usernames[i]){
                 if (password == passwords[i]){
-                    open("Questions.html.html");
+                    open("Selection.html");
                 }
             }
         }
