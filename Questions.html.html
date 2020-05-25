@@ -17,6 +17,13 @@
 <p id="easya"></p>
 <p id="mediuma"></p>
 <p id="harda"></p>
+<button id="easyq1" style="display: block" onclick="myFunction()">Easy</button>
+<button id="medq1" style="display: block" onclick="myFunction3()">Medium</button>
+<button id="hardq1" style="display: block" onclick="myFunction5()">Hard</button>
+<button id="easya1" style="display: block" onclick="myFunction2()">Easy Answers</button>
+<button id="meda1" style="display: block" onclick="myFunction4()">Medium Answers</button>
+<button id="harda1" style="display: block" onclick="myFunction6()">Hard Answers</button>
+<button id="next" style="display: block" onclick="myFunction7()">Next Question</button>
 </body>
 
 
@@ -27,6 +34,12 @@
     var meda = [];
     var hardq = [];
     var harda = [];
+    var length1 = 0;
+    var length2 = 0;
+    var length3 = 0;
+    var x = Math.floor((Math.random() * length1) + 1);
+    var y = Math.floor((Math.random() * length2) + 1);
+    var z = Math.floor((Math.random() * length3) + 1);
     $(function(){
         var sheetUrl = "https://spreadsheets.google.com/feeds/cells/1wLs17reKErAQ7TNZIQceKrPNW7NllDkKmlfCY5y6qp4/1/public/full?alt=json";
         $.getJSON(sheetUrl, function(data){
@@ -75,24 +88,6 @@
         });
 
     })
-    var length1 = 0;
-    var length2 = 0;
-    var length3 = 0;
-    const x = Math.floor((Math.random() * length1) + 1);
-    const y = Math.floor((Math.random() * length2) + 1);
-    console.log(y);
-    const z = Math.floor((Math.random() * length3) + 1);
-</script>
-<button id="easyq1" style="display: block" onclick="myFunction()">Easy</button>
-<button id="medq1" style="display: block" onclick="myFunction3()">Medium</button>
-<button id="hardq1" style="display: block" onclick="myFunction5()">Hard</button>
-<button id="easya1" style="display: block" onclick="myFunction2()">Easy Answers</button>
-<button id="meda1" style="display: block" onclick="myFunction4()">Medium Answers</button>
-<button id="harda1" style="display: block" onclick="myFunction6()">Hard Answers</button>
-<button id="next" style="display: block" onclick="myFunction7()">Next Question</button>
-
-<script>
-
     function myFunction() {
         document.getElementById("easy").innerHTML = easyq[x];
         document.getElementById("medq1").style.display = "none";
@@ -102,8 +97,6 @@
         document.getElementById("easyanswer").style.display = "block";
         document.getElementById("submit").style.display = "block";
     }
-</script>
-<script>
     function myFunction2() {
         if (document.getElementById("easya").style.display != "none") {
             document.getElementById("easya").innerHTML = easya[x];
@@ -115,9 +108,6 @@
         document.getElementById("easya").style.display = "block";
 
     }
-</script>
-
-<script>
     function myFunction3() {
         document.getElementById("medium").innerHTML = medq[y];
         document.getElementById("easyq1").style.display = "none";
@@ -127,8 +117,6 @@
         document.getElementById("mediumanswer").style.display = "block";
         document.getElementById("submit").style.display = "block";
     }
-</script>
-<script>
     function myFunction4() {
         if (document.getElementById("mediuma").style.display != "none") {
             document.getElementById("mediuma").innerHTML = meda[y];
@@ -139,8 +127,6 @@
         document.getElementById("hardq1").style.display = "none";
         document.getElementById("mediuma").style.display = "block";
     }
-</script>
-<script>
     function myFunction5() {
         document.getElementById("hard").innerHTML = hardq[z];
         document.getElementById("easyq1").style.display = "none";
@@ -150,8 +136,6 @@
         document.getElementById("hardanswer").style.display = "block";
         document.getElementById("submit").style.display = "block";
     }
-</script>
-<script>
     function myFunction6() {
         if (document.getElementById("harda").style.display != "none") {
             document.getElementById("harda").innerHTML = harda[z];
@@ -162,12 +146,10 @@
         document.getElementById("medq1").style.display = "none";
         document.getElementById("harda").style.display = "block";
     }
-</script>
-<script>
     function myFunction7() {
-        const x = Math.floor((Math.random() * length1) + 1);
-        const y = Math.floor((Math.random() * length2) + 1);
-        const z = Math.floor((Math.random() * length3) + 1);
+        x = Math.floor((Math.random() * length1) + 1);
+        y = Math.floor((Math.random() * length2) + 1);
+        z = Math.floor((Math.random() * length3) + 1);
         if (document.getElementById("easyq1").style.display === "block") {
             document.getElementById("easy").innerHTML = easyq[x];
             document.getElementById("easya").innerHTML = easya[x];
@@ -189,8 +171,6 @@
 
 
     }
-</script>
-<script>
     function getInputValue(){
         var eanswer = document.getElementById("easyanswer").value;
         if (eanswer == easya[x]) {
@@ -206,4 +186,5 @@
         }
     }
 </script>
+
 </html>
