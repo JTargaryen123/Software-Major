@@ -5,6 +5,7 @@
     <title>Questions</title>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <h1>Questions</h1><br>
 <p id="easy"></p>
 <p id="medium"></p>
@@ -18,7 +19,7 @@
 <p id="harda"></p>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
     var easyq = [];
     var easya = [];
@@ -30,7 +31,6 @@
         var sheetUrl = "https://spreadsheets.google.com/feeds/cells/1wLs17reKErAQ7TNZIQceKrPNW7NllDkKmlfCY5y6qp4/1/public/full?alt=json";
         $.getJSON(sheetUrl, function(data){
             var entry = data.feed.entry;
-            console.log(entry);
             var i;
             var j;
             var length = entry.length - 1;
@@ -73,25 +73,28 @@
             console.log(meda);
             console.log(hardq);
             console.log(harda);
-
+            length1 = easyq.length - 1;
 
 
         });
 
     })
+    console.log(easyq);
+    var length1 = 0;
+    console.log(length1);
+    const x = Math.floor((Math.random() * length1) + 1);
+    console.log(x);
 </script>
-<button id="easyq1" onclick="myFunction()">Easy</button>
-<button id="medq1" onclick="myFunction3()">Medium</button>
-<button id="hardq1" onclick="myFunction5()">Hard</button>
-<button id="easya1" onclick="myFunction2()">Easy Answers</button>
-<button id="meda1" onclick="myFunction4()">Medium Answers</button>
-<button id="harda1" onclick="myFunction6()">Hard Answers</button>
-<button id="next" onclick="myFunction7()">Next Question</button>
+<button id="easyq1" style="display: block" onclick="myFunction()">Easy</button>
+<button id="medq1" style="display: block" onclick="myFunction3()">Medium</button>
+<button id="hardq1" style="display: block" onclick="myFunction5()">Hard</button>
+<button id="easya1" style="display: block" onclick="myFunction2()">Easy Answers</button>
+<button id="meda1" style="display: block" onclick="myFunction4()">Medium Answers</button>
+<button id="harda1" style="display: block" onclick="myFunction6()">Hard Answers</button>
+<button id="next" style="display: block" onclick="myFunction7()">Next Question</button>
 
 <script>
-    var length = easyq.length;
-    var x = Math.floor((Math.random() * length) + 1);
-    console.log(x);
+
     function myFunction() {
         var i;
         document.getElementById("easy").innerHTML = easyq[x];
@@ -110,6 +113,7 @@
         document.getElementById("harda1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
+        document.getElementById("easya").style.display = "none";
 
     }
 </script>
@@ -156,10 +160,14 @@
 </script>
 <script>
     function myFunction7() {
-        var x = Math.floor((Math.random() * length) + 1);
+        const x = Math.floor((Math.random() * length1) + 1);
         console.log(x);
-        document.getElementById("easy").innerHTML = easyq[x];
-        document.getElementById("easya").innerHTML = easya[x];
+        if (document.getElementById("easyq1").style.display === "block") {
+            document.getElementById("easy").innerHTML = easyq[x];
+            document.getElementById("easya").style.display = "none"
+            document.getElementById("easya").innerHTML = easya[x];
+        }
+
 
     }
 </script>
