@@ -67,23 +67,21 @@
                 }
 
             }
-            console.log(easyq);
-            console.log(easya);
-            console.log(medq);
-            console.log(meda);
-            console.log(hardq);
-            console.log(harda);
             length1 = easyq.length - 1;
+            length2 = medq.length - 1;
+            length3 = hardq.length - 1;
 
 
         });
 
     })
-    console.log(easyq);
     var length1 = 0;
-    console.log(length1);
+    var length2 = 0;
+    var length3 = 0;
     const x = Math.floor((Math.random() * length1) + 1);
-    console.log(x);
+    const y = Math.floor((Math.random() * length2) + 1);
+    console.log(y);
+    const z = Math.floor((Math.random() * length3) + 1);
 </script>
 <button id="easyq1" style="display: block" onclick="myFunction()">Easy</button>
 <button id="medq1" style="display: block" onclick="myFunction3()">Medium</button>
@@ -96,7 +94,6 @@
 <script>
 
     function myFunction() {
-        var i;
         document.getElementById("easy").innerHTML = easyq[x];
         document.getElementById("medq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
@@ -108,19 +105,21 @@
 </script>
 <script>
     function myFunction2() {
-        document.getElementById("easya").innerHTML = easya[x];
+        if (document.getElementById("easya").style.display != "none") {
+            document.getElementById("easya").innerHTML = easya[x];
+        }
         document.getElementById("meda1").style.display = "none";
         document.getElementById("harda1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
-        document.getElementById("easya").style.display = "none";
+        document.getElementById("easya").style.display = "block";
 
     }
 </script>
 
 <script>
     function myFunction3() {
-        document.getElementById("medium").innerHTML = medq;
+        document.getElementById("medium").innerHTML = medq[y];
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
         document.getElementById("easya1").style.display = "none";
@@ -131,16 +130,19 @@
 </script>
 <script>
     function myFunction4() {
-        document.getElementById("mediuma").innerHTML = meda;
+        if (document.getElementById("mediuma").style.display != "none") {
+            document.getElementById("mediuma").innerHTML = meda[y];
+        }
         document.getElementById("easya1").style.display = "none";
         document.getElementById("harda1").style.display = "none";
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
+        document.getElementById("mediuma").style.display = "block";
     }
 </script>
 <script>
     function myFunction5() {
-        document.getElementById("hard").innerHTML = hardq;
+        document.getElementById("hard").innerHTML = hardq[z];
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
         document.getElementById("easya1").style.display = "none";
@@ -151,21 +153,38 @@
 </script>
 <script>
     function myFunction6() {
-        document.getElementById("harda").innerHTML = harda;
+        if (document.getElementById("harda").style.display != "none") {
+            document.getElementById("harda").innerHTML = harda[z];
+        }
         document.getElementById("easya1").style.display = "none";
         document.getElementById("meda1").style.display = "none";
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
+        document.getElementById("harda").style.display = "block";
     }
 </script>
 <script>
     function myFunction7() {
         const x = Math.floor((Math.random() * length1) + 1);
-        console.log(x);
+        const y = Math.floor((Math.random() * length2) + 1);
+        const z = Math.floor((Math.random() * length3) + 1);
         if (document.getElementById("easyq1").style.display === "block") {
             document.getElementById("easy").innerHTML = easyq[x];
-            document.getElementById("easya").style.display = "none"
             document.getElementById("easya").innerHTML = easya[x];
+            document.getElementById("easya").style.display = "none";
+
+        }
+        if (document.getElementById("medq1").style.display === "block") {
+            document.getElementById("medium").innerHTML = medq[y];
+            document.getElementById("mediuma").innerHTML = meda[y];
+            document.getElementById("mediuma").style.display = "none";
+
+        }
+        if (document.getElementById("hardq1").style.display === "block") {
+            document.getElementById("hard").innerHTML = hardq[z];
+            document.getElementById("harda").innerHTML = harda[z];
+            document.getElementById("harda").style.display = "none";
+
         }
 
 
@@ -173,9 +192,18 @@
 </script>
 <script>
     function getInputValue(){
-        var answer = document.getElementById("easyanswer").value;
-        if (answer == easya[x]) {
-            window.alert("Correct!!!!")}
+        var eanswer = document.getElementById("easyanswer").value;
+        if (eanswer == easya[x]) {
+            window.alert("Correct!!!!")
+        }
+        var manswer = document.getElementById("mediumanswer").value;
+        if (manswer == meda[y]) {
+            window.alert("Correct!!!!")
+        }
+        var hanswer = document.getElementById("hardanswer").value;
+        if (hanswer == harda[z]) {
+            window.alert("Correct!!!!")
+        }
     }
 </script>
 </html>
