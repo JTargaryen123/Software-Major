@@ -10,6 +10,11 @@
     <input type="text" placeholder="Username" id="uname"><br><br>
     <input id="pass" type="password" placeholder="Password"><br><br>
     <button type="button" onclick="getInputValue()">Submit</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="Help" onclick="myFunction()">Online Help</button>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,8 +42,6 @@
             }
         })
             });
-    console.log(usernames);
-    console.log(passwords);
 
 </script>
 <script>
@@ -54,6 +57,9 @@
                 }
             }
         }
+    }
+    function myFunction() {
+        open("HelpSheet.html")
     }
 </script>
 </body>
