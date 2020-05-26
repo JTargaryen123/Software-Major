@@ -6,36 +6,37 @@
 
     <title>Questions</title>
 
+    <!-- The link to the css sheet for styling -->
     <link rel="stylesheet" href="Styles.css">
 
 </head>
 <body>
 
-<! this script enables the use of jquery, allowing extraction of files from google sheets>
+<!-- this script enables the use of jquery, with the source being a google api, allowing extraction of files from google sheets -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<! Title of the Page>
+<!-- Title of the Page -->
 <h1>Questions</h1><br>
 
-<! The fields in which the easy, medium and hard questions will be printed>
+<!-- The fields in which the easy, medium and hard questions will be printed -->
 <p id="easy"></p>
 <p id="medium"></p>
 <p id="hard"></p>
 
-<! The fields in which the easy, medium and hard answers will be able to be entered>
+<!-- The fields in which the easy, medium and hard answers will be able to be entered -->
 <input style="display: none" type="text" placeholder="Answer" id="easyanswer">
 <input style="display: none" type="text" placeholder="Answer" id="mediumanswer">
 <input style="display: none" type="text" placeholder="Answer" id="hardanswer">
 
-<! The button allowing the code to register what the user has entered into the answer field>
+<!-- The button allowing the code to register what the user has entered into the answer field -->
 <button style="display: none" id="submit" type="button" onclick="getInputValue()">Submit</button>
 
-<! The fields in which the easy, medium and hard answers will appear>
+<!-- The fields in which the easy, medium and hard answers will appear -->
 <p id="easya"></p>
 <p id="mediuma"></p>
 <p id="harda"></p>
 
-<! The buttons that the user utilises to choose the difficulty, show the answers, and choose to go to the next question>
+<!-- The buttons that the user utilises to choose the difficulty, show the answers, and choose to go to the next question -->
 <button id="easyq1" style="display: block" onclick="myFunction()">Easy</button>
 <button id="medq1" style="display: block" onclick="myFunction3()">Medium</button>
 <button id="hardq1" style="display: block" onclick="myFunction5()">Hard</button>
@@ -43,10 +44,10 @@
 <button id="meda1" style="display: block" onclick="myFunction4()">Medium Answers</button>
 <button id="harda1" style="display: block" onclick="myFunction6()">Hard Answers</button>
 <button id="next" style="display: block" onclick="myFunction7()">Next Question</button>
-<button id="driver" style="display: block" onclick="myFunctionDriver()">Driver</button>
+<!-- <button id="driver" style="display: block" onclick="myFunctionDriver()">Driver</button> -->
 <br><br>
 
-<! The online Help Button>
+<!-- The online Help Button -->
 <button id="Help" onclick="myFunction8()">Online Help</button>
 </body>
 
@@ -66,9 +67,9 @@
     var length3 = 0;
 
     // The variables that are a random number within the bounds of the length of the array
-    var x = Math.floor((Math.random() * length1) + 1);
-    var y = Math.floor((Math.random() * length2) + 1);
-    var z = Math.floor((Math.random() * length3) + 1);
+    var x = Math.floor((Math.random() * length1));
+    var y = Math.floor((Math.random() * length2));
+    var z = Math.floor((Math.random() * length3));
 
     // The function that imports the spreadsheet, and then sorts each line into a seperate array
     $(function(){
@@ -202,15 +203,16 @@
     function myFunction7() {
 
         // Resetting the random number to be a different value, as such changing the question
-        x = Math.floor((Math.random() * length1) + 1);
-        y = Math.floor((Math.random() * length2) + 1);
-        z = Math.floor((Math.random() * length3) + 1);
+        x = Math.floor((Math.random() * length1));
+        y = Math.floor((Math.random() * length2));
+        z = Math.floor((Math.random() * length3));
 
         // Changing the easy question, and hiding the answer
         if (document.getElementById("easyq1").style.display === "block") {
             document.getElementById("easy").innerHTML = easyq[x];
             document.getElementById("easya").innerHTML = easya[x];
             document.getElementById("easya").style.display = "none";
+            document.getElementById("easyanswer").value = "";
 
         }
 
@@ -219,6 +221,7 @@
             document.getElementById("medium").innerHTML = medq[y];
             document.getElementById("mediuma").innerHTML = meda[y];
             document.getElementById("mediuma").style.display = "none";
+            document.getElementbyId("mediumanswer").value = "";
 
         }
 
@@ -227,6 +230,7 @@
             document.getElementById("hard").innerHTML = hardq[z];
             document.getElementById("harda").innerHTML = harda[z];
             document.getElementById("harda").style.display = "none";
+            document.getElementbyId("hardanswer").value = "";
 
         }
 

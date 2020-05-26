@@ -1,31 +1,30 @@
 button {
-    background-color: black;
-    color: lawngreen;
+    background-color: darkseagreen;
+    color: white;
     border-radius: 50%;
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", serif;
 }
 
 h1 {
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", serif;
 }
 
 h2 {
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", serif;
 }
 
 h3 {
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", serif;
 }
 
 h4 {
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", serif;
 }
 
 p {
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", serif;
 }
 
 input {
-    background-color: black;
-    color: lawngreen;
+    color: seagreen;
 }
