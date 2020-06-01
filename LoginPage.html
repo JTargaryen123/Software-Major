@@ -57,13 +57,18 @@
         var username = document.getElementById("uname").value;
         var password = document.getElementById("pass").value;
         var i;
+        var found = false
         var length = usernames.length;
         for (i=0; i <= length; i++){
             if (username == usernames[i]){
                 if (password == passwords[i]){
                     open("Selection.html");
+                    found = true
                 }
             }
+        }
+        if (found == false){
+            window.alert("Your username or password is incorrect")
         }
     }
     function myFunction() {
