@@ -1,7 +1,7 @@
 button {
-    background-color: darkseagreen;
+    background-color: dodgerblue;
     color: white;
-    border-radius: 50%;
+    border-radius: 10%;
     font-family: "Comic Sans MS", serif;
 }
 
@@ -26,5 +26,5 @@ p {
 }
 
 input {
-    color: seagreen;
+    color: dodgerblue;
 }
