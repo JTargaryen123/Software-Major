@@ -1,62 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+
     <title>Questions</title>
+
+    <!-- The link to the css sheet for styling -->
+    <link rel="stylesheet" href="Styles.css">
+
 </head>
 <body>
+
+<!-- this script enables the use of jquery, with the source being a google api, allowing extraction of files from google sheets -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Title of the Page -->
 <h1>Questions</h1><br>
+
+<!-- The fields in which the easy, medium and hard questions will be printed -->
 <p id="easy"></p>
 <p id="medium"></p>
 <p id="hard"></p>
+
+<!-- The fields in which the easy, medium and hard answers will be able to be entered -->
+<input style="display: none" type="text" placeholder="Answer" id="easyanswer">
+<input style="display: none" type="text" placeholder="Answer" id="mediumanswer">
+<input style="display: none" type="text" placeholder="Answer" id="hardanswer">
+
+<!-- The button allowing the code to register what the user has entered into the answer field -->
+<button style="display: none" id="submit" type="button" onclick="getInputValue()">Submit</button>
+
+<!-- The fields in which the easy, medium and hard answers will appear -->
 <p id="easya"></p>
 <p id="mediuma"></p>
 <p id="harda"></p>
+
+<!-- The buttons that the user utilises to choose the difficulty, show the answers, and choose to go to the next question -->
+<button id="easyq1" style="display: block" onclick="myFunction()">Easy</button>
+<button id="medq1" style="display: block" onclick="myFunction3()">Medium</button>
+<button id="hardq1" style="display: block" onclick="myFunction5()">Hard</button>
+<button id="easya1" style="display: block" onclick="myFunction2()">Easy Answers</button>
+<button id="meda1" style="display: block" onclick="myFunction4()">Medium Answers</button>
+<button id="harda1" style="display: block" onclick="myFunction6()">Hard Answers</button>
+<button id="next" style="display: block" onclick="myFunction7()">Next Question</button>
+<!-- <button id="driver" style="display: block" onclick="myFunctionDriver()">Driver</button> -->
+<br><br>
+
+<!-- The online Help Button -->
+<button id="Help" onclick="myFunction8()">Online Help</button>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
+    // The arrays that the questions and answers from the google sheets are placed into
     var easyq = [];
     var easya = [];
     var medq = [];
     var meda = [];
     var hardq = [];
     var harda = [];
+
+    // The variables that will contain the length of the question arrays, currently set to 0
+    var length1 = 0;
+    var length2 = 0;
+    var length3 = 0;
+
+    // The variables that are a random number within the bounds of the length of the array
+    var x = Math.floor((Math.random() * length1));
+    var y = Math.floor((Math.random() * length2));
+    var z = Math.floor((Math.random() * length3));
+
+    // The function that imports the spreadsheet, and then sorts each line into a seperate array
     $(function(){
         var sheetUrl = "https://spreadsheets.google.com/feeds/cells/1wLs17reKErAQ7TNZIQceKrPNW7NllDkKmlfCY5y6qp4/1/public/full?alt=json";
         $.getJSON(sheetUrl, function(data){
             var entry = data.feed.entry;
-            console.log(entry);
             var i;
             var j;
             var length = entry.length - 1;
-            console.log(length);
+            // Sorting easy questions into an array
             for (i=0; i <= length; i++) {
                 if (i == 0) {
                     for (j=i; j <= length; j+=6) {
                         easyq.push(entry[j].content.$t)
                     }
                 }
+                // Sorting easy answers into an array
                 else if (i == 1) {
                     for (j=i; j <= length; j+=6) {
                         easya.push(entry[j].content.$t)
                     }
                 }
+                // Sorting medium questions into an array
                 else if (i == 2) {
                     for (j=i; j <= length; j+=6) {
                         medq.push(entry[j].content.$t)
                     }
                 }
+                // Sorting medium answers into an array
                 else if (i == 3) {
                     for (j=i; j <= length; j+=6) {
                         meda.push(entry[j].content.$t)
                     }
                 }
+                // Sorting hard questions into an array
                 else if (i == 4) {
                     for (j=i; j <= length; j+=6) {
                         hardq.push(entry[j].content.$t)
                     }
                 }
+                // Sorting hard answers into an array
                 else if (i == 5) {
                     for (j=i; j <= length; j+=6) {
                         harda.push(entry[j].content.$t)
@@ -64,80 +118,183 @@
                 }
 
             }
-            console.log(easyq);
-            console.log(easya);
-            console.log(medq);
-            console.log(meda);
-            console.log(hardq);
-            console.log(harda);
 
+            // Setting the length variables to be equal to the length of the arrays
+            length1 = easyq.length - 1;
+            length2 = medq.length - 1;
+            length3 = hardq.length - 1;
 
 
         });
 
     })
-</script>
-<button id="easyq1" onclick="myFunction()">Easy</button>
-<button id="medq1" onclick="myFunction3()">Medium</button>
-<button id="hardq1" onclick="myFunction5()">Hard</button>
-<button id="easya1" onclick="myFunction2()">Easy Answers</button>
-<button id="meda1" onclick="myFunction4()">Medium Answers</button>
-<button id="harda1" onclick="myFunction6()">Hard Answers</button>
 
-<script>
+    // The function that runs when the easy button is pressed, hiding medium and hard buttons, revealing the question and the answer field
     function myFunction() {
-        document.getElementById("easy").innerHTML = easyq;
+        document.getElementById("easy").innerHTML = easyq[x];
         document.getElementById("medq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
         document.getElementById("meda1").style.display = "none";
         document.getElementById("harda1").style.display = "none";
+        document.getElementById("easyanswer").style.display = "block";
+        document.getElementById("submit").style.display = "block";
     }
-</script>
-<script>
+
+    // The function that runs when the easy answer button is pressed, hiding medium and hard buttons and revealing the answer
     function myFunction2() {
-        document.getElementById("easya").innerHTML = easya;
+        if (document.getElementById("easya").style.display != "none") {
+            document.getElementById("easya").innerHTML = easya[x];
+        }
         document.getElementById("meda1").style.display = "none";
         document.getElementById("harda1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
+        document.getElementById("easya").style.display = "block";
 
     }
-</script>
 
-<script>
+    // The function that runs when the medium button is pressed, hiding easy and hard buttons, revealing the question and the answer field
     function myFunction3() {
-        document.getElementById("medium").innerHTML = medq;
+        document.getElementById("medium").innerHTML = medq[y];
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
         document.getElementById("easya1").style.display = "none";
         document.getElementById("harda1").style.display = "none";
+        document.getElementById("mediumanswer").style.display = "block";
+        document.getElementById("submit").style.display = "block";
     }
-</script>
-<script>
+
+    // The function that runs when the medium answer button is pressed, hiding easy and hard buttons and revealing the answer
     function myFunction4() {
-        document.getElementById("mediuma").innerHTML = meda;
+        if (document.getElementById("mediuma").style.display != "none") {
+            document.getElementById("mediuma").innerHTML = meda[y];
+        }
         document.getElementById("easya1").style.display = "none";
         document.getElementById("harda1").style.display = "none";
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("hardq1").style.display = "none";
+        document.getElementById("mediuma").style.display = "block";
     }
-</script>
-<script>
+
+    // The function that runs when the hard button is pressed, hiding medium and easy buttons, revealing the question and the answer field
     function myFunction5() {
-        document.getElementById("hard").innerHTML = hardq;
+        document.getElementById("hard").innerHTML = hardq[z];
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
         document.getElementById("easya1").style.display = "none";
         document.getElementById("meda1").style.display = "none";
+        document.getElementById("hardanswer").style.display = "block";
+        document.getElementById("submit").style.display = "block";
     }
-</script>
-<script>
+
+    // The function that runs when the hard answer button is pressed, hiding medium and easy buttons and revealing the answer
     function myFunction6() {
-        document.getElementById("harda").innerHTML = harda;
+        if (document.getElementById("harda").style.display != "none") {
+            document.getElementById("harda").innerHTML = harda[z];
+        }
         document.getElementById("easya1").style.display = "none";
         document.getElementById("meda1").style.display = "none";
         document.getElementById("easyq1").style.display = "none";
         document.getElementById("medq1").style.display = "none";
+        document.getElementById("harda").style.display = "block";
+    }
+
+    // The function that runs when the next question button is pressed, changing the question and answer, and hiding the answer
+    function myFunction7() {
+
+        // Resetting the random number to be a different value, as such changing the question
+        x = Math.floor((Math.random() * length1));
+        y = Math.floor((Math.random() * length2));
+        z = Math.floor((Math.random() * length3));
+
+        // Changing the easy question, and hiding the answer
+        if (document.getElementById("easyq1").style.display === "block") {
+            document.getElementById("easy").innerHTML = easyq[x];
+            document.getElementById("easya").innerHTML = easya[x];
+            document.getElementById("easya").style.display = "none";
+            document.getElementById("easyanswer").value = "";
+
+        }
+
+        // Changing the medium question, and hiding the answer
+        if (document.getElementById("medq1").style.display === "block") {
+            document.getElementById("medium").innerHTML = medq[y];
+            document.getElementById("mediuma").innerHTML = meda[y];
+            document.getElementById("mediuma").style.display = "none";
+            document.getElementbyId("mediumanswer").value = "";
+
+        }
+
+        // Changing the hard question, and hiding the answer
+        if (document.getElementById("hardq1").style.display === "block") {
+            document.getElementById("hard").innerHTML = hardq[z];
+            document.getElementById("harda").innerHTML = harda[z];
+            document.getElementById("harda").style.display = "none";
+            document.getElementbyId("hardanswer").value = "";
+
+        }
+
+
+    }
+
+    // The function that runs when the submit button is pressed, checking whether the user inputted answer is the same as the answer within the array. If correct, it alerts so, and if incorrect it alerts incorrect
+    function getInputValue(){
+        var eanswer = document.getElementById("easyanswer").value;
+        var hanswer = document.getElementById("hardanswer").value;
+        var manswer = document.getElementById("mediumanswer").value;
+        if (eanswer == easya[x] || manswer == meda[y] || hanswer == harda[z]) {
+            window.alert("Correct!!!!")
+        }
+        else
+            window.alert("Unfortunately, that is wrong. Please check your answer.")
+    }
+
+    // The driver function used to test whether myFunction() works
+    function myFunctionDriver() {
+        myFunction();
+        if (document.getElementById("easy").innerHTML === "What does DFD stand for?" || document.getElementById("easy").innerHTML === "What does IP stand for?") {
+            window.alert("The question has shown and is correct")
+        }
+        else
+            window.alert("the answer has not shown up - unexpected");
+        if (document.getElementById("medq1").style.display === "none") {
+            window.alert("medium button is gone - expected parameter")
+        }
+        else
+            window.alert("the button has not been hidden - unexpected");
+        if (document.getElementById("hardq1").style.display === "none") {
+            window.alert("hard button is gone - expected parameter")
+        }
+        else
+            window.alert("the button has not been hidden - unexpected");
+        if (document.getElementById("meda1").style.display === "none") {
+            window.alert("medium answer button is gone - expected parameter")
+        }
+        else
+            window.alert("the button has not been hidden - unexpected");
+        if (document.getElementById("harda1").style.display === "none") {
+            window.alert("hard answer button is gone - expected parameter")
+        }
+        else
+            window.alert("the button has not been hidden - unexpected");
+        if (document.getElementById("easyanswer").style.display === "block") {
+            window.alert("answer field has shown - expected parameter")
+        }
+        else
+            window.alert("the answer field has not shown - unexpected");
+        if (document.getElementById("submit").style.display === "block") {
+            window.alert("submit button has shown - expected parameter")
+        }
+        else
+            window.alert("the submit button has not been shown - unexpected")
+
+
+    }
+
+    // The function that runs when the online help button is pressed, opening the online help page
+    function myFunction8() {
+        open("HelpSheet.html")
     }
 </script>
+
 </html>

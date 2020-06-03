@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>LOGINHERE</title>
+
+    <title>LOGIN</title>
+
+    <link rel="stylesheet" href="Styles.css">
+
 </head>
 <body>
+
 <h1>LOGIN</h1>
+
 <form id="form">
-    <input type="text" placeholder="username" id="uname"><br><br>
-    <input id="pass" type="text" placeholder="password"><br><br>
-    <button type="button" onclick="getInputValue()">Submit</button>
+
+    <input type="text" placeholder="Username" id="uname"><br><br>
+    <input id="pass" type="password" placeholder="Password"><br><br>
+    <button id="submit" type="button" onclick="getInputValue()">Submit</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="Help" onclick="myFunction()">Online Help</button>
+
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script>
+    document.getElementById("submit").focus();
     var usernames = [];
     var passwords = [];
     $(function() {
@@ -37,23 +53,27 @@
             }
         })
             });
-    console.log(usernames);
-    console.log(passwords);
 
-</script>
-<script>
     function getInputValue(){
         var username = document.getElementById("uname").value;
         var password = document.getElementById("pass").value;
         var i;
+        var found = false
         var length = usernames.length;
-        for (i=0; i <= length; i++){
+        for (i=1; i <= length; i++){
             if (username == usernames[i]){
                 if (password == passwords[i]){
                     open("Selection.html");
+                    found = true
                 }
             }
         }
+        if (found == false){
+            window.alert("Your username or password is incorrect")
+        }
+    }
+    function myFunction() {
+        open("HelpSheet.html")
     }
 </script>
 </body>

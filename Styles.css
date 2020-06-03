@@ -1,0 +1,32 @@
+@import url("https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2")
+
+button {
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 10%;
+    font-family: "Inter-Loom", serif;
+}
+
+h1 {
+    font-family: "Inter-Loom", serif;
+}
+
+h2 {
+    font-family: "Inter-Loom", serif;
+}
+
+h3 {
+    font-family: "Inter-Loom", serif;
+}
+
+h4 {
+    font-family: "Inter-Loom", serif;
+}
+
+p {
+    font-family: "Inter-Loom", serif;
+}
+
+input {
+    color: dodgerblue;
+}

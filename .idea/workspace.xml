@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e736ccc-1e02-4575-8677-91f968b1a67c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/LoginPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,13 +17,24 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>easyanswer</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1btVEIVOwogz4uQoNdukxzMLGeh" />
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectId" id="1cNThRVOfOzBQZ2FmUg7aWPD8LH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,6 +47,9 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -42,6 +57,9 @@
     </configuration>
     <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
       <method />
+    </configuration>
+    <configuration name="Questions.html.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Software-Major/Questions.html.html">
+      <method v="2" />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
@@ -68,10 +86,83 @@
       <workItem from="1589342620491" duration="2009000" />
       <workItem from="1589451288196" duration="287000" />
       <workItem from="1591179013822" duration="265000" />
+      <workItem from="1589767633975" duration="2931000" />
+      <workItem from="1590368221970" duration="3412000" />
+      <workItem from="1590378651586" duration="2927000" />
+      <workItem from="1590445238246" duration="2684000" />
+      <workItem from="1590454643235" duration="4629000" />
+      <workItem from="1590464639636" duration="1962000" />
+      <workItem from="1590977315635" duration="1494000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="981" height="307" key="GridCell.Tab.0.bottom" timestamp="1590370388565">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.0.bottom/0.23.1920.980@0.23.1920.980" timestamp="1590370388565" />
+    <state width="981" height="307" key="GridCell.Tab.0.center" timestamp="1590370388564">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.0.center/0.23.1920.980@0.23.1920.980" timestamp="1590370388564" />
+    <state width="981" height="307" key="GridCell.Tab.0.left" timestamp="1590370388563">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.0.left/0.23.1920.980@0.23.1920.980" timestamp="1590370388563" />
+    <state width="981" height="307" key="GridCell.Tab.0.right" timestamp="1590370388564">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.0.right/0.23.1920.980@0.23.1920.980" timestamp="1590370388564" />
+    <state width="981" height="307" key="GridCell.Tab.1.bottom" timestamp="1590370388567">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.1.bottom/0.23.1920.980@0.23.1920.980" timestamp="1590370388567" />
+    <state width="981" height="307" key="GridCell.Tab.1.center" timestamp="1590370388566">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.1.center/0.23.1920.980@0.23.1920.980" timestamp="1590370388566" />
+    <state width="981" height="307" key="GridCell.Tab.1.left" timestamp="1590370388565">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.1.left/0.23.1920.980@0.23.1920.980" timestamp="1590370388565" />
+    <state width="981" height="307" key="GridCell.Tab.1.right" timestamp="1590370388566">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.1.right/0.23.1920.980@0.23.1920.980" timestamp="1590370388566" />
+    <state width="981" height="307" key="GridCell.Tab.2.bottom" timestamp="1590370388568">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.2.bottom/0.23.1920.980@0.23.1920.980" timestamp="1590370388568" />
+    <state width="981" height="307" key="GridCell.Tab.2.center" timestamp="1590370388567">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.2.center/0.23.1920.980@0.23.1920.980" timestamp="1590370388567" />
+    <state width="981" height="307" key="GridCell.Tab.2.left" timestamp="1590370388567">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.2.left/0.23.1920.980@0.23.1920.980" timestamp="1590370388567" />
+    <state width="981" height="307" key="GridCell.Tab.2.right" timestamp="1590370388568">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.2.right/0.23.1920.980@0.23.1920.980" timestamp="1590370388568" />
+    <state width="981" height="307" key="GridCell.Tab.3.bottom" timestamp="1590370388569">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.3.bottom/0.23.1920.980@0.23.1920.980" timestamp="1590370388569" />
+    <state width="981" height="307" key="GridCell.Tab.3.center" timestamp="1590370388569">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.3.center/0.23.1920.980@0.23.1920.980" timestamp="1590370388569" />
+    <state width="981" height="307" key="GridCell.Tab.3.left" timestamp="1590370388568">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.3.left/0.23.1920.980@0.23.1920.980" timestamp="1590370388568" />
+    <state width="981" height="307" key="GridCell.Tab.3.right" timestamp="1590370388569">
+      <screen x="0" y="23" width="1920" height="980" />
+    </state>
+    <state width="981" height="307" key="GridCell.Tab.3.right/0.23.1920.980@0.23.1920.980" timestamp="1590370388569" />
   </component>
 </project>
